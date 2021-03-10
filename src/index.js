@@ -5,13 +5,13 @@ module.exports = function check(str, bracketsConfig) {
    close = ['}', ')', ']'],
    closeIndex,
    openIndex;
-   for (let i = 0; len = char.lenth; i < len; i++) { openIndex = open.indexOf(char[i]);
-   if (openIndex !== -1) stack.push(openIndex);   
+   for (let i = 0; len = char.length; i < len; i++) { openIndex = open.indexOf(char[i]);
+   if (openIndex !== -1) { stack.push(openIndex);   
          continue;
        }   
    closeIndex = close.indexOf(char[i]);
        if (closeIndex !== -1) {
-        openIndex = stack.pop();
+        openIndex = stack.pop(); 
         if (closeIndex !== openIndex) {
              return false;
            }
