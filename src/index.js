@@ -1,30 +1,30 @@
 module.exports = function check(str, bracketsConfig) {
   
 {
-    var chars = str.split(''),
-        stack = [],
+    let char = str.split(''),
+        mas = [],
         open = ['{', '(', '['],
         close = ['}', ')', ']'],
         closeIndex,
         openIndex;
 
-    for (var i = 0, len = chars.length; i < len; i++) {
-       openIndex = open.indexOf(chars[i]);
+    for (let i = 0, len = char.length; i < len; i++) {
+       openIndex = open.indexOf(char[i]);
        if (openIndex !== -1) {
-           stack.push(openIndex);
+           mas.push(openIndex);
            continue;
        }
 
-       closeIndex = close.indexOf(chars[i]);
+       closeIndex = close.indexOf(char[i]);
        if (closeIndex !== -1) {
-           openIndex = stack.pop();
+           openIndex = mas.pop();
            if (closeIndex !== openIndex) {
                return false;
-           }
-       }
-    }
+                             }
+                                   }
+                                       }
 
-    if (stack.length !== 0) {
+    if (mas.length !== 0) {
         return false;
     }
 
