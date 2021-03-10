@@ -1,6 +1,5 @@
 module.exports = function check(str, bracketsConfig) {
   
-{
     let char = str.split(''),
         mas = [],
         open = ['{', '(', '['],
